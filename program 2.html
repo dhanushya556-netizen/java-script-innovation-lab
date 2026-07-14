@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Document</title>
+    </head>
+    <body>
+        <h2> guess game</h2>
+        <input type="number" id="num" placeholder="enter your number">
+        <button onclick="playgame()">guess</button>
+        <p id="feedback"></p>
+        <p id="attempts"></p>
+        <script>
+            let target=Math.floor(Math.random()*50)+1;
+            let count=0;
+            console.log(target)
+        function playgame(){
+            let number=document.getElementById("num").value;
+            count++;
+        if(number<target){
+          document.getElementById("feedback").innerText="too low";
+            }
+        else if(number>target){
+           document.getElementById("feedback").innerText="too high"; 
+        }
+    else {
+    document.getElementById("feedback").innerText = "Your guess is correct!";
+    document.getElementById("attempts").innerText ="You have tried " + count;
+
+    document.querySelector("button").disabled = true;
+}
+}
+        </script>
+    </body>
+</html>
